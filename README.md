@@ -31,3 +31,48 @@ git branch -M main
 git push -u origin main
 ```
 
+### git IDs and references
+
+```
+# show full history
+git log
+
+# show history with shortened versions of IDs
+git log --oneline
+
+# show history with graph
+git log --oneline --graph
+
+# show specific git object
+# (can use first 4 chars of ID, if unique, or reference)
+git show object_ID_or_reference
+
+# show current commit
+git show HEAD
+
+# show current commit's parent
+git show HEAD~
+
+# short current commit's parent's parent
+git show HEAD~~
+```
+
+### git tags
+
+```
+# view tags in repository
+git tag
+
+# permanently attach a tag of v0.1 to the last commit
+git tag -a -m "tag_message" v0.1
+
+# show commits with tag of interest
+git show v0.1
+
+# push tag to remote repository
+git push origin v0.1
+
+```
+
+
+
