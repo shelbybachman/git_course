@@ -95,5 +95,17 @@ git branch -D branch_name
 
 ```
 
+### merges
 
+```
+# fast-forward merge: moves base branch label to tip of topic branch
+git checkout main
+git merge branch_name
+git branch -d branch_name
+
+# (a merge is fast-forwardable if no commits have been made to base branch since branching)
+
+# merge with a merge commit
+git merge --no-ff branch_name
+```
 
