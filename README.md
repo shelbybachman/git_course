@@ -74,5 +74,26 @@ git push origin v0.1
 
 ```
 
+### branches
+
+```
+# view branches in repository
+git branch
+
+# create new branch
+git branch branch_name
+
+# switch to new branch
+# and update working tree with files from checked out branch
+git checkout branch_name
+
+# delete a branch
+git branch -d branch_name
+
+# delete a branch if not fully merged
+git branch -D branch_name
+
+```
+
 
 
