@@ -109,3 +109,28 @@ git branch -d branch_name
 git merge --no-ff branch_name
 ```
 
+### merge conflicts
+
+```
+# checkout base branch
+git checkout main
+
+# try to merge feature branch with main branch
+git merge featureX
+
+# once prompted with a merge conflict,
+# fix file(s) causing the conflict
+git status
+
+# stage fixed file(s)
+git add fileA.txt
+
+# commit merge conflict
+git commit -m 'fix merge conflict due to featureA.txt'
+
+# delete merged feature branch
+git branch -d featureX
+
+# (also: abort merge attempt)
+git merge --abort
+```
