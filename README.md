@@ -134,3 +134,77 @@ git branch -d featureX
 # (also: abort merge attempt)
 git merge --abort
 ```
+
+### tracking branches
+
+```
+# view local and tracking branches
+git branch --all
+
+# change default remote tracking branch
+# (usually <remote> is origin)
+# (can also change default branch for all users in github)
+git remote set-head <remote> <branch> 
+
+# view combined log of local and tracking branches
+git log --all --oneline --graph
+```
+
+### fetch, push and pull
+
+```
+# fetch retrieves new objects and references, updates tracking branches
+# without having to merge them into your current work
+git fetch
+# then pull so long as you can fast-forward merge
+
+# pull combines fetch and merge
+git pull  # (default --ff: fast-forward merge)
+          # (use --no-ff to include a merge commit)
+
+# push adds commits to remote repository
+git push # (-u: set upstream, specify remote branch)
+git push -u <repo> <branch>
+```
+
+### rebasing
+
+```
+# (rebase moves commits to a new base)
+
+# method 1 - change parent of currently checked-out branch
+git checkout featureX
+git rebase main
+
+# method 2 - change parent, without checking out the branch
+git rebase main featureX
+
+# if a conflict arises when trying to rebase,
+# fix the file(s), add to staging area, and rebase
+
+# return to pre-rebase state
+git rebase --abort
+
+```
+
+### rewriting history
+```
+# amend most recent commit
+git commit -m 'commit_message'
+git commit --amend -m 'amended_commit_message'
+
+# interactive rebase
+# (also use to delete a commit)
+git rebase -i <after_this_commit>
+
+# squash a commit
+# (combines most recent into a previous commit)
+git rebase -i <after_this_commit>
+
+# squash merge
+# (merges tip of feature branch onto tip of base branch)
+git checkout main
+git merge --squash featureX
+git commit  # create squash merge commit
+git branch -D featureX
+```
