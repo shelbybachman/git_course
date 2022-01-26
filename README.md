@@ -208,3 +208,20 @@ git merge --squash featureX
 git commit  # create squash merge commit
 git branch -D featureX
 ```
+
+### pull requests
+
+```
+# single repo pull request:
+
+git branch featureX
+git checkout featureX
+# (do work on the branch)
+git push -u origin featureX
+# (manage pull request on github)
+
+# multi-repo pull request:
+
+# (fork upstream repo)
+# create branch on fork
+# create pull request from fork
